@@ -1,0 +1,38 @@
+/**
+  |============================
+  | include css partials with
+  | default @import url()
+  |============================
+*/
+@import url('./reset.css');
+@import url('./1-timer.css');
+@import url('./2-snackbar.css');
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: #2e2f42;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  background-color: #fff;
+}
+
+section {
+  padding: 16px;
+}
+
+h1 {
+  margin-bottom: 32px;
+}
+
+section > ul > li > a {
+  color: #4e75ff;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 1.5;
+}
+
+section > ul > li > a:hover{
+  color: #6c8cff;
+}

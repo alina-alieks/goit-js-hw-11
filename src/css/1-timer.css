@@ -1,0 +1,110 @@
+#datetime-picker, 
+.flatpickr-mobile {
+    font-family: "Montserrat", sans-serif;
+    color: #2e2f42;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    border: 1px solid #808080;
+    border-radius: 4px;
+    width: 280px;
+    height: 40px;
+    margin-right: 8px;
+    letter-spacing: 0.04em;
+    padding: 8px 0 8px 16px;
+    outline: none;
+}
+.flatpickr-mobile {
+    max-width: 280px;
+}
+
+#datetime-picker:active,
+#datetime-picker:focus,
+.flatpickr-mobile:active,
+.flatpickr-mobile:focus {
+    border-color: #4e75ff;
+    color: #000;
+}
+#datetime-picker:hover,
+.flatpickr-mobile:hover {
+    border-color: #000;
+}
+#datetime-picker:disabled,
+.flatpickr-input:disabled {
+    background-color: #fafafa;
+    color: #808080;
+    border-color: #808080;
+    pointer-events: none;
+}
+
+
+#datetime-picker + button,
+.flatpickr-mobile + button {
+    display: inline-block;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    width: 75px;
+    height: 40px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.04em;
+    background-color: #4e75ff;;
+    color: #ffffff;
+}
+
+#datetime-picker + button:disabled,
+.flatpickr-mobile + button:disabled {
+    background-color: #cfcfcf;
+    color: #989898;
+}
+#datetime-picker + button:hover,
+#datetime-picker + button:focus,
+.flatpickr-mobile + button:hover,
+.flatpickr-mobile + button:focus {
+    background-color: #6c8cff;
+}
+
+.timer {
+    display: flex;
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+}
+
+.value {
+    font-size: 40px;
+    line-height: 1.2;
+    text-align: center;
+
+}
+
+.label {
+    text-align: center;
+}
+
+
+section a {
+    display: block;
+    color: #989898;
+    margin-bottom: 52px;
+}
+
+.iziToast.iziToast-theme-dark .iziToast-message {
+    font-family: "Montserrat",
+        sans-serif;
+}
+
+/* div .flatpickr-calendar,
+div .flatpickr-days,
+div .dayContainer {
+    width: 280px;
+    min-width: 280px;
+    max-width: 280px;
+} */
