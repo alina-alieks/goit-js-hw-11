@@ -19,21 +19,25 @@ function getImagesFromPixabay(event) {
     const datas = getResponse(url);
     // console.log(datas)
     if (datas) { 
-        datas.then(data => {
+        datas
+            .then(data => {
             showLoader();
             if (data.hits.length !== 0) {
                 // console.log(data.hits)
                 markup(data);
             } else (
                 showErrorMessage()
-            )
-        })}
+                )
+            })
+            .catch(() => {
+                // console.log(error);
+                showLoader()
+                showErrorMessage();
+            })
+        }
     form.reset()
 }
 form.addEventListener("submit", getImagesFromPixabay)
-
-
-
 
 
 //Вікористання бібліотеки
@@ -42,9 +46,9 @@ const lightbox = new SimpleLightbox('.gallery a', { captionsData: "alt", caption
 //Додавання HTML коду списку галереї
 function markup(data) {
 //   console.log(data)
-let createGallery = "";
+let galleryHTML = "";
 data.hits.map(({ webformatURL, largeImageURL, tags, likes, views, comments, downloads }) => {
-    return createGallery += `<li class="gallery-item">
+    return galleryHTML += `<li class="gallery-item">
         <a href="${largeImageURL}"><img class="gallery-item-images" src="${webformatURL}" alt="${tags}" /></a>
         <ul class="gallery-item-info">
             <li class="item-info">
@@ -66,7 +70,7 @@ data.hits.map(({ webformatURL, largeImageURL, tags, likes, views, comments, down
             </ul>
     </li>`
     }).join("");
-    gallery.innerHTML = createGallery;
+    gallery.innerHTML = galleryHTML;
     //Оновлення метод refresh() для даних Ajax Calls або після DOM-маніпуляцій 
     lightbox.refresh();
     //Стилі бібліотеки simplelightbox
