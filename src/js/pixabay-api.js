@@ -18,7 +18,7 @@ const form = document.querySelector(".form")
 const loader = document.querySelector(".loader")
 
 const baseUrl = "https://pixabay.com/api/";
-const key = "42527705-4e95d3f46fcc8571248d3eb243";
+const key = "42527705-4e95d3f46fcc8571248d3eb24";
 
 //Формування URL для HTTP запита
 function getApiRequest(value) {
