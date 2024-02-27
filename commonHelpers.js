@@ -1,22 +1,22 @@
-import{i as a}from"./assets/vendor-ad859c2f.js";(function(){const r=document.createElement("link").relList;if(r&&r.supports&&r.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))s(e);new MutationObserver(e=>{for(const o of e)if(o.type==="childList")for(const n of o.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&s(n)}).observe(document,{childList:!0,subtree:!0});function t(e){const o={};return e.integrity&&(o.integrity=e.integrity),e.referrerPolicy&&(o.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?o.credentials="include":e.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function s(e){if(e.ep)return;e.ep=!0;const o=t(e);fetch(e.href,o)}})();const m="/goit-js-hw-11/assets/icon-error-3c862585.svg",l=document.querySelector(".form");console.log(l.imput.image.value);const u="https://pixabay.com/api/",f="42527705-4e95d3f46fcc8571248d3eb24";function p(i){i.preventDefault();const t=i.currentTarget.elements.image.value.trim().split(" ").join("+"),s=`${u}?key=${f}&q=${t}&image_type=photo&orientation=horizontal&safesearch=true`;return g(s),l.reset(),s}function g(i){const r=()=>a.error({message:"Sorry, there are no images matching your search query. Please try again!",iconUrl:m,position:"topRight",backgroundColor:"#ef4040",theme:"dark",transitionIn:"fadeInRight"});fetch(i).then(t=>{if(!t.ok)throw new Error("Error");return t.json()}).then(t=>{t.hits.length!==0?(console.log(t.hits),y(t)):r()}).catch(t=>t.message)}const d=document.querySelector(".gallery");function y(i){console.log(i);let r="";i.hits.map(({webformatURL:t,tags:s,likes:e,views:o,comments:n,downloads:c})=>r+=`<li class="gallery-item">
-          <img class="gallery-item-images" src="${t}" alt="${s}" />
-          <ul class="gallery-item-info">
+import{i as g,S as d}from"./assets/vendor-5b791d57.js";(function(){const o=document.createElement("link").relList;if(o&&o.supports&&o.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))s(e);new MutationObserver(e=>{for(const t of e)if(t.type==="childList")for(const i of t.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&s(i)}).observe(document,{childList:!0,subtree:!0});function n(e){const t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?t.credentials="include":e.crossOrigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function s(e){if(e.ep)return;e.ep=!0;const t=n(e);fetch(e.href,t)}})();const y="/goit-js-hw-11/assets/icon-error-3c862585.svg",a=()=>g.error({message:"Sorry, there are no images matching your search query. Please try again!",iconUrl:y,position:"topRight",backgroundColor:"#ef4040",theme:"dark",transitionIn:"fadeInRight"}),h=document.querySelector(".form"),b=document.querySelector(".loader"),S="https://pixabay.com/api/",v="42527705-4e95d3f46fcc8571248d3eb24";function q(r){return`${S}?key=${v}&q=${r}&image_type=photo&orientation=horizontal&safesearch=true`}const u=()=>b.classList.toggle("is-hidden");function L(r){if(h.image.value.trim())return u(),fetch(r).then(o=>o.json()).catch(o=>o.message);a()}const f=document.querySelector(".form"),m=document.querySelector(".gallery");function $(r){r.preventDefault(),m.innerHTML="";const n=r.currentTarget.elements.image.value.trim().split(" ").join("+"),s=q(n),e=L(s);e&&e.then(t=>{u(),t.hits.length!==0?w(t):a()}),f.reset()}f.addEventListener("submit",$);const c=new d(".gallery a",{captionsData:"alt",captionDelay:250});function w(r){let o="";r.hits.map(({webformatURL:n,largeImageURL:s,tags:e,likes:t,views:i,comments:l,downloads:p})=>o+=`<li class="gallery-item">
+        <a href="${s}"><img class="gallery-item-images" src="${n}" alt="${e}" /></a>
+        <ul class="gallery-item-info">
             <li class="item-info">
-              <p class="item-info-name">Likes</p>
-              <p class="item-info-value">${e}</p>
+                <p class="item-info-name">Likes</p>
+                <p class="item-info-value">${t}</p>
             </li>
             <li class="item-info">
-              <p class="item-info-name">Views</p>
-              <p class="item-info-value">${o}</p>
+                <p class="item-info-name">Views</p>
+                <p class="item-info-value">${i}</p>
             </li>
             <li class="item-info">
-              <p class="item-info-name">Comments</p>
-              <p class="item-info-value">${n}</p>
+                <p class="item-info-name">Comments</p>
+                <p class="item-info-value">${l}</p>
             </li>
             <li class="item-info">
-              <p class="item-info-name">Downloads</p>
-              <p class="item-info-value">${c}</p>
+                <p class="item-info-name">Downloads</p>
+                <p class="item-info-value">${p}</p>
             </li>
-          </ul>
-        </li>`).join(""),d.innerHTML=r}const h=document.querySelector(".form");h.addEventListener("submit",p);
+            </ul>
+    </li>`).join(""),m.innerHTML=o,c.refresh(),c.on("shown.simplelightbox",function(){const n=document.querySelector(".sl-overlay"),s=document.querySelector(".sl-close "),e=document.querySelector(".sl-counter"),t=document.querySelectorAll(".sl-navigation button"),i=document.querySelector(".sl-caption");n.style.backgroundColor="rgb(46, 47, 66)",s.style.color="#ffffff",s.style.fontSize="2rem",e.style.color="#ffffff",t.forEach(l=>l.style.color="#ffffff"),i.style.backgroundColor="rgba(46, 47, 66, 0.80)"})}
 //# sourceMappingURL=commonHelpers.js.map
